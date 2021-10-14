@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function computerPlay(){
+                return r = Math.floor(Math.random()*3);
+                
+            }
+            function playerSelection(){
+            let choice = 4;
+            while (choice<0 || choice>2 || isNaN(choice)==true){    
+            choice = parseInt(prompt('Select your weapon. 0 for rock, 1 for paper, or 2 for scissors:'));
+            }
+            return choice;
+        }
+            function round(comp,player){
+                if (comp == 0){ //if comp has rock
+                    if(player == 0){ //if player has rock too
+                        return 1;//return 1 for draw
+                    }
+                    else if (player == 1){ //if player has paper and comp has rock
+                        return 2;//return 2 for a player win
+                    }else{
+                        return 0;//return 0 for a player loss
+                    }
+                }
+                else if (comp ==1){ //if comp has paper
+                    if(player == 0){//player chose rock
+                        return 0;//return 0 for player loss
+                    }
+                    else if (player == 1){//player chose paper
+                        return 1;//return 1 for draw
+                    }else{
+                        return 2;//return 2 for a player win
+                    }
+                }else{//comp has scissors
+                    if(player == 0){//player chose rock
+                        return 2;//return win 
+                    }
+                    else if (player == 1){//player chose paper
+                        return 0;//return loss
+                    }else{
+                        return 1;//return draw
+                    }
+                }
+            }
+            {
+                let count = 0; //count used for while loop
+                let userScore = 0; //to count userScore
+                let compScore = 0;//to count computer Score
+
+                while (count <5){ //while loop for game
+                let computer = computerPlay();//this is the computers random choice
+                let choice = playerSelection(); //the player choosing their weapon
+                let result = round(computer,choice); //find result of the game
+                if (result == 2){ //if player wins
+                    userScore +=2;  //add two to user score
+                    console.log('Player Won Round');//let player know they won round
+                }else if (result == 1){//if player draws
+                    console.log('Draw');//let player know the round was a draw
+                }
+                else{
+                    console.log('Computer Won Round');//comp wins
+                    compScore+=2;//add two to comp score
+                }
+                
+                count +=1; //add one to loop counter
+                }
+
+                if (compScore == userScore){//check the final score
+                    console.log('tie');
+                }
+                else if(compScore>userScore){
+                    console.log('Computer wins');
+
+                }else{
+                    console.log('You win');
+                }
+
+                console.log(`Computer Score: ${compScore} |||||| Player Score: ${userScore}`);//show the final score
+            }
+        </script>
+    </body>
+</html>
