@@ -1,5 +1,5 @@
-    let playerChoice = 3;
-    let compChoice = 4;
+    let playerChoice = 0;//will use in game logic to eval winning and losing
+    let compChoice = 0; 
     let count = 0;
     let playerScore = 0;
     let compScore = 0;
@@ -118,14 +118,14 @@
     }
     function tallyScore(x){
         if (x==2){ //eval the round and give points
-            playerScore+=2;
+            playerScore+=1;
             result.textContent = "Player Wins Round";
         }
         else if(x==1){
             result.textContent = 'Draw';
         }
         else{
-            compScore+=2;
+            compScore+=1;
             result.textContent = 'Computer Wins Round';
         }
     }
@@ -140,7 +140,7 @@
             else{
                 finalResult.textContent = "Draw"
             }
-            return true;
+            return true; //return a boolean for the replay function
         }
         else{
             return false;
@@ -155,7 +155,7 @@
             control.appendChild(restart);
         }
     }
-    function updateScore(){
+    function updateScore(){ 
         pScore.textContent = `Your score: ${playerScore}`;
         cScore.textContent = `Computer Score: ${compScore}`;
     }
