@@ -1,0 +1,18 @@
+#players {
+    background-color: wheat;
+}
+#computers {
+    background-color: thistle;
+}
+#stats {
+    background-color: lightsalmon;
+}
+#buttonChoice {
+    background-color: lightskyblue;
+    padding-bottom: 30px;
+}
+#controls {
+    background-color: lightslategrey;
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
