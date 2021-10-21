@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css"/>        
+        <link rel='stylesheet' href='styles.css'/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,100&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div id='buttonChoice'>
-            <button id="rock">rock</button>
-            <button id="paper">paper</button>
-            <button id='scissors'>scissors</button>
+        <div id='contain'>
+            <div id='left'>
+                <div id="playerPic">
+                    <p id='choice'>choose</p>
+                </div>
+                <div id = 'buttonChoice'>
+                    <button id="rock">rock</button>
+                    <button id="paper">paper</button>
+                    <button id='scissors'>scissors</button>
+                </div>
+                <div id='controls'>
+                    <button id="go">play !</button>
+                    <button id='restart'>restart ?</button>
+                </div>
+                <div id="stats">
+                    <h1 id='finalResult'></h1>
+                    <p id="result">...</p>
+                </div>
+            </div>
+            <p id="round">R:0</p>
+            <div id="right">
+                <div id='compPic'>
+                    <p id="comp">waiting</p>
+                </div>
+                <div id='explain'>
+                    <p id="instruct">Click rock,paper or scissors
+                        to select your weapon. Once you've selected
+                        for the round, you will unlock the 'play !' button. This button allows
+                        you to play the round. You must pick a weapon for this button to unlock.
+                        The game will go on for 5 rounds then end. You will unlock
+                        the 'restart ?' button once the game is finished. Click it if you wish to play again.
+                    </p>
+                </div>
+                    <p id="pScore">Your Score:</p>
+                    <p id='cScore'>Computer Score:</p>
+            </div>
         </div>
-
-        <div id='controls'>
-            <button id='go'>go</button>
-        </div>
-
-        <div id='players'>
-            <p id="choice">Your Weapon:</p>
-            <p id="pScore">Your Score:</p>
-        </div>
-
-        <div id='computers'>
-            <p id="comp">Computer Weapon:</p>
-            <p id='cScore'>Computer Score:</p>
-        </div>
-
-        <div id='stats'>
-            <p id="round">Round:0</p>
-            <p id="result">And the round result is...</p>
-            <h1 id ='finalResult'></h1>
-        </div>
-        
         <script src=scripts.js></script>
     </body>
 </html>
